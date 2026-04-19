@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Thainá Beauty | Management</title>
+    <title>Studio Thainá Beauty | Gestão Elite</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@100;300;600&display=swap" rel="stylesheet">
     
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
@@ -19,150 +19,44 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--burgundy); font-family: 'Montserrat', sans-serif; color: white; min-height: 100vh; overflow-x: hidden; }
 
-        body {
-            background-color: var(--burgundy);
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* --- SPLASH SCREEN ELITE --- */
+        /* --- SPLASH SCREEN --- */
         #splash {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at center, var(--deep-rose) 0%, var(--burgundy) 100%);
             display: flex; justify-content: center; align-items: center;
-            z-index: 10000; transition: transform 1.5s cubic-bezier(0.8, 0, 0.2, 1);
+            z-index: 10000; transition: 1.5s cubic-bezier(0.8, 0, 0.2, 1);
         }
-
-        .logo-box { text-align: center; z-index: 100; }
-        .logo-txt {
-            font-family: 'Cinzel Decorative', cursive;
-            font-size: 3.5rem;
-            background: var(--gold-shimmer);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite;
-            letter-spacing: 10px;
-        }
-
-        .petal {
-            position: absolute;
-            background: linear-gradient(135deg, #ffc0cb 0%, #d4af37 100%);
-            border-radius: 100% 0 80% 10%;
-            opacity: 0.5;
-            pointer-events: none;
-            filter: blur(0.5px);
-        }
+        .logo-txt { font-family: 'Cinzel Decorative', cursive; font-size: 3.5rem; background: var(--gold-shimmer); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; letter-spacing: 10px; }
 
         /* --- DASHBOARD --- */
-        #app {
-            display: none; padding: 80px 20px;
-            max-width: 1300px; margin: 0 auto;
-            animation: reveal 2s ease forwards;
-        }
-
+        #app { display: none; padding: 80px 20px; max-width: 1300px; margin: 0 auto; animation: reveal 2s ease forwards; }
         header { text-align: center; margin-bottom: 80px; }
-        header h1 { 
-            font-family: 'Cinzel Decorative', cursive; 
-            font-size: 2.8rem; color: var(--gold); 
-            letter-spacing: 12px; margin-bottom: 10px;
-        }
-        .luxury-line { 
-            width: 150px; height: 1px; 
-            background: var(--gold-shimmer); margin: 0 auto; 
-            box-shadow: 0 0 10px var(--gold);
-        }
+        header h1 { font-family: 'Cinzel Decorative', cursive; font-size: 2.8rem; color: var(--gold); letter-spacing: 12px; }
+        .luxury-line { width: 150px; height: 1px; background: var(--gold-shimmer); margin: 20px auto; box-shadow: 0 0 10px var(--gold); }
 
-        /* --- AGENDA TABLE --- */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 2px; padding: 40px;
-            backdrop-filter: blur(30px);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
-        }
-
+        .glass-panel { background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(212, 175, 55, 0.15); padding: 40px; backdrop-filter: blur(30px); }
         table { width: 100%; border-collapse: collapse; }
-        th {
-            font-family: 'Cinzel Decorative', cursive;
-            color: var(--gold); font-size: 0.8rem;
-            letter-spacing: 4px; padding: 25px;
-            text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
+        th { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 0.8rem; letter-spacing: 4px; padding: 25px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.4); }
         td { padding: 30px 25px; border-bottom: 1px solid rgba(255,255,255,0.02); font-weight: 200; }
         .gold-txt { color: var(--gold); font-weight: 600; letter-spacing: 1.5px; }
 
-        /* --- BOTÕES --- */
-        .btn-action {
-            background: none; border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--gold-light); padding: 10px 20px;
-            cursor: pointer; font-size: 0.6rem; letter-spacing: 2px;
-            transition: 0.5s; text-transform: uppercase;
-        }
-        .btn-action:hover { background: var(--gold); color: black; border-color: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+        .btn-action { background: none; border: 1px solid rgba(212, 175, 55, 0.3); color: #ff4d4d; padding: 10px 20px; cursor: pointer; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s; }
+        .btn-action:hover { background: #ff4d4d; color: white; border-color: #ff4d4d; }
 
-        .fab-elite {
-            position: fixed; bottom: 60px; right: 60px;
-            width: 80px; height: 80px;
-            background: var(--gold-shimmer); background-size: 200% auto;
-            border-radius: 50%; border: none; cursor: pointer;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            display: flex; justify-content: center; align-items: center;
-            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .fab-elite:hover { transform: scale(1.1) rotate(180deg); filter: brightness(1.2); }
+        .fab-elite { position: fixed; bottom: 60px; right: 60px; width: 80px; height: 80px; background: var(--gold-shimmer); background-size: 200% auto; border-radius: 50%; border: none; cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
 
         /* --- MODAL --- */
-        #modal {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.98); display: none;
-            justify-content: center; align-items: center; z-index: 20000;
-        }
+        #modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); display: none; justify-content: center; align-items: center; z-index: 20000; }
+        .modal-box { background: var(--burgundy); border: 1px solid var(--gold); padding: 60px; width: 95%; max-width: 550px; }
+        .input-wrap { margin-bottom: 35px; }
+        .input-wrap label { display: block; font-size: 0.6rem; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 3px; }
+        input { width: 100%; background: none; border: none; border-bottom: 1px solid rgba(212, 175, 55, 0.3); color: white; padding: 12px 0; font-size: 1.1rem; }
+        .btn-save { width: 100%; padding: 22px; background: var(--gold-shimmer); border: none; color: black; font-weight: 700; text-transform: uppercase; letter-spacing: 5px; cursor: pointer; }
 
-        .modal-box {
-            background: var(--burgundy); border: 1px solid var(--gold);
-            padding: 60px; width: 95%; max-width: 550px;
-            box-shadow: 0 0 100px rgba(212, 175, 55, 0.1);
-        }
-
-        .modal-box h2 {
-            font-family: 'Cinzel Decorative', cursive; color: var(--gold);
-            text-align: center; margin-bottom: 40px; letter-spacing: 6px;
-        }
-
-        .input-wrap { margin-bottom: 35px; position: relative; }
-        .input-wrap label {
-            display: block; font-size: 0.6rem; color: var(--gold);
-            text-transform: uppercase; margin-bottom: 12px; letter-spacing: 3px;
-        }
-
-        input {
-            width: 100%; background: none; border: none;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            color: white; padding: 12px 0; font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem; transition: 0.4s;
-        }
-        input:focus { outline: none; border-bottom-color: var(--gold); }
-
-        .btn-save {
-            width: 100%; padding: 22px; background: var(--gold-shimmer);
-            border: none; color: black; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 5px; cursor: pointer;
-            transition: 0.4s;
-        }
-
-        /* --- ANIMATIONS --- */
         @keyframes shine { to { background-position: 200% center; } }
         @keyframes reveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes petalFall {
-            0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
-            20% { opacity: 0.6; }
-            100% { transform: translateY(110vh) rotate(720deg) translateX(100px); opacity: 0; }
-        }
     </style>
 </head>
 <body>
@@ -170,7 +64,6 @@
     <div id="splash">
         <div class="logo-box">
             <h1 class="logo-txt">Studio Thainá</h1>
-            <p style="color: var(--gold); letter-spacing: 8px; font-size: 0.7rem; margin-top: 20px; font-weight: 200;">CLOUD EDITION</p>
         </div>
     </div>
 
@@ -193,46 +86,30 @@
                 </thead>
                 <tbody id="agenda-list"></tbody>
             </table>
-            <div id="empty" style="text-align: center; padding: 60px; opacity: 0.2; letter-spacing: 2px;">Sem agendamentos.</div>
+            <div id="empty" style="text-align: center; padding: 60px; opacity: 0.2; letter-spacing: 2px;">Carregando Livro de Ouro...</div>
         </div>
 
         <button class="fab-elite" onclick="openM()">
-            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
         </button>
     </div>
 
     <div id="modal">
         <div class="modal-box">
-            <h2>Réserver</h2>
-            
-            <div class="input-wrap">
-                <label>Nome da Cliente</label>
-                <input type="text" id="in-nome" placeholder="Isabella d'Este">
-            </div>
-
+            <h2 style="font-family: 'Cinzel Decorative'; color: var(--gold); text-align: center; margin-bottom: 40px;">Réserver</h2>
+            <div class="input-wrap"><label>Nome</label><input type="text" id="in-nome"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <div class="input-wrap">
-                    <label>Data</label>
-                    <input type="text" id="in-data" placeholder="00/00/0000" maxlength="10">
-                </div>
-                <div class="input-wrap">
-                    <label>Horário</label>
-                    <input type="text" id="in-hora" placeholder="00:00" maxlength="5">
-                </div>
+                <div class="input-wrap"><label>Data</label><input type="text" id="in-data" placeholder="00/00/0000" maxlength="10"></div>
+                <div class="input-wrap"><label>Horário</label><input type="text" id="in-hora" placeholder="00:00" maxlength="5"></div>
             </div>
-
-            <div class="input-wrap">
-                <label>Procedimento</label>
-                <input type="text" id="in-proc" placeholder="Ex: Sobrancelhas de Ouro">
-            </div>
-
+            <div class="input-wrap"><label>Procedimento</label><input type="text" id="in-proc"></div>
             <button class="btn-save" onclick="add()">Confirmar</button>
-            <button onclick="closeM()" style="background:none; border:none; color:white; width:100%; margin-top:30px; cursor:pointer; opacity: 0.3; font-size: 0.6rem; letter-spacing: 3px;">RETOURNER</button>
+            <button onclick="closeM()" style="background:none; border:none; color:white; width:100%; margin-top:30px; cursor:pointer; opacity: 0.3; font-size: 0.6rem;">VOLTAR</button>
         </div>
     </div>
 
     <script>
-        // --- CONFIGURAÇÃO FIREBASE ---
+        // CONFIGURAÇÃO FIREBASE
         const firebaseConfig = { 
             apiKey: "AIzaSyB5WTIfRlINDEt_f2cuIFvmRpAf9vDErP4", 
             authDomain: "studio-thaina.firebaseapp.com", 
@@ -243,97 +120,81 @@
             measurementId: "G-W8RB689VZ3" 
         };
 
-        // Inicializar Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
-        // --- MÁSCARAS INTELIGENTES ---
-        document.getElementById('in-data').addEventListener('input', function (e) {
+        // MÁSCARAS
+        document.getElementById('in-data').addEventListener('input', e => {
             let v = e.target.value.replace(/\D/g, '');
             if (v.length > 2) v = v.substring(0, 2) + '/' + v.substring(2);
             if (v.length > 5) v = v.substring(0, 5) + '/' + v.substring(5, 9);
             e.target.value = v;
         });
-
-        document.getElementById('in-hora').addEventListener('input', function (e) {
+        document.getElementById('in-hora').addEventListener('input', e => {
             let v = e.target.value.replace(/\D/g, '');
             if (v.length > 2) v = v.substring(0, 2) + ':' + v.substring(2, 4);
             e.target.value = v;
         });
 
-        // --- SISTEMA DE PÉTALAS ---
-        function spawnPetal() {
-            const p = document.createElement('div');
-            p.className = 'petal';
-            const size = Math.random() * 20 + 10 + 'px';
-            p.style.width = size; p.style.height = size;
-            p.style.left = Math.random() * 100 + 'vw';
-            p.style.animation = `petalFall ${Math.random() * 4 + 4}s ease-in forwards`;
-            document.getElementById('splash').appendChild(p);
-            setTimeout(() => p.remove(), 8000);
-        }
-        let pInt = setInterval(spawnPetal, 150);
-
-        // --- NAVEGAÇÃO & SYNC ---
+        // NAVEGAÇÃO
         window.onload = () => {
             setTimeout(() => {
                 document.getElementById('splash').style.transform = 'translateY(-100%)';
-                setTimeout(() => {
-                    document.getElementById('app').style.display = 'block';
-                    clearInterval(pInt);
-                }, 1000);
-            }, 3000);
+                setTimeout(() => { document.getElementById('app').style.display = 'block'; }, 1000);
+            }, 2500);
         };
 
         function openM() { document.getElementById('modal').style.display = 'flex'; }
         function closeM() { document.getElementById('modal').style.display = 'none'; }
 
-        // --- LÓGICA FIREBASE (ADD / LISTEN / REMOVE) ---
+        // LÓGICA DO BANCO DE DADOS (Ouvindo em tempo real)
         function add() {
             const n = document.getElementById('in-nome').value;
             const d = document.getElementById('in-data').value;
             const h = document.getElementById('in-hora').value;
             const p = document.getElementById('in-proc').value;
 
-            if(!n || !d || !h || !p) return;
+            if(!n || !d || !h || !p) { alert("Preencha todos os campos!"); return; }
 
-            db.ref('agendamentos').push({ n, d, h, p });
-            
-            closeM();
-            ['in-nome','in-data','in-hora','in-proc'].forEach(id => document.getElementById(id).value = "");
+            db.ref('agendamentos').push({ n, d, h, p })
+                .then(() => {
+                    closeM();
+                    ['in-nome','in-data','in-hora','in-proc'].forEach(id => document.getElementById(id).value = "");
+                });
         }
 
-        // Ouvir mudanças no banco em tempo real
+        // Esta função roda sozinha toda vez que algo muda no Firebase
         db.ref('agendamentos').on('value', (snapshot) => {
-            const list = document.getElementById('agenda-list');
-            list.innerHTML = "";
+            const tbody = document.getElementById('agenda-list');
+            const emptyMsg = document.getElementById('empty');
+            tbody.innerHTML = "";
             
-            snapshot.forEach((item) => {
-                const data = item.val();
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td style="font-weight:600; letter-spacing: 1px;">${data.n}</td>
-                    <td>${data.d}</td>
-                    <td class="gold-txt">${data.h}</td>
-                    <td style="font-style:italic; opacity: 0.8;">${data.p}</td>
-                    <td style="text-align: right;">
-                        <button class="btn-action" onclick="removeData('${item.key}')">Excluir</button>
-                    </td>
-                `;
-                list.appendChild(row);
-            });
-            check();
+            if (snapshot.exists()) {
+                emptyMsg.style.display = 'none';
+                snapshot.forEach((child) => {
+                    const val = child.val();
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td style="font-weight:600;">${val.n}</td>
+                        <td>${val.d}</td>
+                        <td class="gold-txt">${val.h}</td>
+                        <td style="font-style:italic; opacity: 0.7;">${val.p}</td>
+                        <td style="text-align: right;">
+                            <button class="btn-action" onclick="removeData('${child.key}')">Remover</button>
+                        </td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } else {
+                emptyMsg.style.display = 'block';
+                emptyMsg.innerText = "Nenhum agendamento encontrado.";
+            }
         });
 
         function removeData(key) {
-            if(confirm("Deseja remover este agendamento?")) {
+            if(confirm("Deseja apagar este registro?")) {
                 db.ref('agendamentos/' + key).remove();
             }
-        }
-
-        function check() {
-            const l = document.getElementById('agenda-list');
-            document.getElementById('empty').style.display = l.children.length > 0 ? 'none' : 'block';
         }
     </script>
 </body>
